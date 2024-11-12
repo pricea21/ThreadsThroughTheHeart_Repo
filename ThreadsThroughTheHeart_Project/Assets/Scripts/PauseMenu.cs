@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
+    public bool InSettings = false;
+    public bool InConOrCred = false;
     public GameObject pausePanel;
     public GameObject settingPanel;
     public GameObject creditsPanel;
@@ -18,14 +20,20 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+
+                if (InSettings)
+                {
+                    Pause();
+
+                    if (InConOrCred)
+                    {
+                        Settings();
+                    }
+                }
             }
             else
             {
                 Pause();
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
             }
         }
     }
@@ -35,7 +43,10 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(true);
         Time.timeScale = 0;
         GameIsPaused = true;
+        InSettings = false;
         settingPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Resume()
@@ -43,6 +54,8 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Restart()
@@ -61,14 +74,19 @@ public class PauseMenu : MonoBehaviour
     public void Settings()
     {
         settingPanel.SetActive(true);
+        InSettings = true;
+        InConOrCred = false;
         pausePanel.SetActive(false);
         creditsPanel.SetActive(false);
         controlsPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Credits()
     {
         creditsPanel.SetActive(true);
+        InConOrCred = true;
         settingPanel.SetActive(false);
         pausePanel.SetActive(false);
     }
@@ -76,6 +94,7 @@ public class PauseMenu : MonoBehaviour
     public void Controls()
     {
         controlsPanel.SetActive(true);
+        InConOrCred = true;
         settingPanel.SetActive(false);
         pausePanel.SetActive(false);
     }
