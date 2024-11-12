@@ -45,8 +45,6 @@ public class PlayerMovement : MonoBehaviour
         else
             rb.drag = 0;
 
-        //transform.position = new Vector3(transform.position.x, 1.01f, transform.position.z); //Forces the y position to stay at 0 
-
     }
 
     private void FixedUpdate()
