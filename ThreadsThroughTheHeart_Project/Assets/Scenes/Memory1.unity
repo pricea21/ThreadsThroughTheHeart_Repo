@@ -1610,9 +1610,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5973aae011a2c4f8a646211ac9f51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameIsPaused: 0
-  InSettings: 0
-  InConOrCred: 0
+  gameIsPaused: 0
+  inSettings: 0
+  inConOrCred: 0
   pausePanel: {fileID: 705146542}
   settingPanel: {fileID: 1018798988}
   creditsPanel: {fileID: 90648494}
@@ -5117,10 +5117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c08e0c10df6d34c9af331f51db09fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 945137125}
-  CanAttack: 1
-  AttackCooldown: 0.15
-  IsAttacking: 0
+  weapon: {fileID: 945137125}
+  canAttack: 1
+  attackCooldown: 1
+  isAttacking: 0
 --- !u!65 &945137129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5242,7 +5242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.633989, y: 0.000000101556836, z: -0.0000000832567, w: 0.77334213}
+  m_LocalRotation: {x: 0.633989, y: 0.000000101556786, z: -0.000000083256666, w: 0.77334213}
   m_LocalPosition: {x: 0, y: 5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7514,7 +7514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720103833}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6339889, y: 0.00000009738491, z: -0.00000007983653, w: 0.7733422}
+  m_LocalRotation: {x: 0.6339889, y: 0.00000009738489, z: -0.00000007983652, w: 0.7733422}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

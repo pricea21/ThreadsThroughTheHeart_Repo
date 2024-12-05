@@ -25,7 +25,7 @@ public class EnemyBehavior : MonoBehaviour
     // When the player hits the enemy
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Weapon" && wc.IsAttacking)
+        if (other.tag == "Weapon" && wc.isAttacking)
         {
             // If the enemy is in the shout animation and the player hits it
             if (isShouting)

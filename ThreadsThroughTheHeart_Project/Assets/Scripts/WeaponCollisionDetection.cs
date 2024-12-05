@@ -8,7 +8,7 @@ public class WeaponCollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy" && wc.IsAttacking)
+        if(other.tag == "Enemy" && wc.isAttacking)
         {
             Debug.Log(other.name);
             other.GetComponent<Animator>().SetTrigger("Hit");

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    public GameObject Weapon;
-    public bool CanAttack = true;
-    public float AttackCooldown = 1.0f;
-    public bool IsAttacking = false;
+    public GameObject weapon;
+    public bool canAttack = true;
+    public float attackCooldown = 1.0f;
+    public bool isAttacking = false;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) //add controller button inside 
         {
-            if (CanAttack)
+            if (canAttack)
             {
                 WeaponAttack();
             }
@@ -22,23 +22,23 @@ public class WeaponController : MonoBehaviour
 
     public void WeaponAttack()
     {
-        IsAttacking = true;
-        CanAttack = false;
-        Animator anim = Weapon.GetComponent<Animator>();
+        isAttacking = true;
+        canAttack = false;
+        Animator anim = weapon.GetComponent<Animator>();
         anim.SetTrigger("Attack");
-        StartCoroutine(ResetAttackCooldown());
+        StartCoroutine(ResetattackCooldown());
     }
 
-    IEnumerator ResetAttackCooldown()
+    IEnumerator ResetattackCooldown()
     {
         StartCoroutine(ResetAttackBool());
-        yield return new WaitForSeconds(AttackCooldown);
-        CanAttack = true;
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
     }
 
     IEnumerator ResetAttackBool()
     {
         yield return new WaitForSeconds(0.15f);
-        IsAttacking = false;
+        isAttacking = false;
     }
 }

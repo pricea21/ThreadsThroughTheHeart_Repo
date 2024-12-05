@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleMenu : MonoBehaviour
 {
-    public bool InSettings = false;
-    public bool InConOrCred = false;
+    public bool inSettings = false;
+    public bool inConOrCred = false;
     public GameObject settingPanel;
     public GameObject creditsPanel;
     public GameObject controlsPanel;
@@ -16,8 +16,8 @@ public class TitleMenu : MonoBehaviour
     public void Settings()
     {
         settingPanel.SetActive(true);
-        InSettings = true;
-        InConOrCred = false;
+        inSettings = true;
+        inConOrCred = false;
         creditsPanel.SetActive(false);
         controlsPanel.SetActive(false);
         titleMenuPanel.SetActive(false);
@@ -26,14 +26,14 @@ public class TitleMenu : MonoBehaviour
     public void Credits()
     {
         creditsPanel.SetActive(true);
-        InConOrCred = true;
+        inConOrCred = true;
         settingPanel.SetActive(false);
     }
 
     public void Controls()
     {
         controlsPanel.SetActive(true);
-        InConOrCred = true;
+        inConOrCred = true;
         settingPanel.SetActive(false);
     }
 
@@ -52,6 +52,6 @@ public class TitleMenu : MonoBehaviour
     {
         titleMenuPanel.SetActive(true);
         settingPanel.SetActive(false);
-        InSettings = false;
+        inSettings = false;
     }
 }
